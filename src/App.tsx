@@ -1,23 +1,16 @@
+// src/App.tsx
 import { useEffect, useState } from "react";
 import ImageGallery from "./components/ImageGallery/ImageGallery";
 import SearchBar from "./components/SearchBar/SearchBar";
-import { fetchArticles } from "./Services/api";
+import { fetchArticles, Image } from "./Services/api";
 import toast, { Toaster } from "react-hot-toast";
 import Loader from "./components/Loader/Loader";
-import ErrorMesage from "./components/ErrorMessage/ErrorMesage";
 import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
 import ImageModal from "./components/ImageModal/ImageModal";
 import Modal from "react-modal";
+import ErrorMesage from "./components/ErrorMessage/ErrorMesage";
 
 Modal.setAppElement("#root");
-
-interface Image {
-  id: string;
-  urls: {
-    small: string;
-    regular: string;
-  };
-}
 
 function App() {
   const [images, setImages] = useState<Image[]>([]);

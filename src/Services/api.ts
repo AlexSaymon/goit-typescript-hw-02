@@ -2,7 +2,7 @@ import axios from "axios";
 
 const ACCESS_KEY = "mdCHMsrJE1UYSJfXIPBncbmI6D-6jTO6JdmUzq3Wcgk";
 
-interface Image {
+export interface Image {
   id: string;
   urls: {
     small: string;
